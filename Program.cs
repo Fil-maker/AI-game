@@ -4,19 +4,28 @@ using System;
 class Programm
 {
     public static void Main() {
-        Person person = new Person();
-        Console.WriteLine(person.CurrentTolerances.Physiological);
-        Console.WriteLine(person.CurrentTolerances.Security);
-        Console.WriteLine(person.CurrentTolerances.Social);
-        Console.WriteLine(person.CurrentTolerances.Prestigious);
-        Console.WriteLine(person.CurrentTolerances.Spiritual);
-        Console.WriteLine(Math.Pow(person.CurrentTolerances.Physiological, 2) + Math.Pow(person.CurrentTolerances.Security, 2) + Math.Pow(person.CurrentTolerances.Social, 2) + Math.Pow(person.CurrentTolerances.Prestigious, 2) + Math.Pow(person.CurrentTolerances.Spiritual, 2));
-        person.ProgressStatement();
-        Console.WriteLine(person.PersonsType.Name);
-        Console.WriteLine(person.Needs);
-        for(int i = 0; i < 100; i++)
-            person.ProgressStatement();
+        Person test = new Person();
+        //test.CurrentTolerances = new Tolerance(1.0);
+        test.ProgressStatement();
+        Console.WriteLine(test.Needs);
+        Console.WriteLine(test.Happiness);
+        for (int i = 0; i < 10; i++)
+        test.ProgressStatement();
+        Console.WriteLine(test.Needs);
+        Console.WriteLine(test.PersonsType.Name);
+        Console.WriteLine(test.Happiness);
         Console.WriteLine();
-        Console.WriteLine(person.Needs);
+        for (int i = 0; i < 2; i++)
+        {
+            Person person = new Person();
+            Console.WriteLine(person.CurrentTolerances);
+            Console.WriteLine(person.PersonsType.Name);
+            person.ProgressStatement();
+            Console.WriteLine(person.Needs);
+            person.ProgressStatement();
+            Console.WriteLine(person.Needs);
+            Console.WriteLine();
+        }
+        
     }
 }
